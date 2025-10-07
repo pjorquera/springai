@@ -10,7 +10,9 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 
+@Component
 class Tools {
 
     @Tool(description = "Schedule an appointment for a given person")
@@ -25,10 +27,10 @@ public class Config {
     
     private final ChatClient chatClient;
 
-    public Config(ChatClient.Builder chatClientBuilder, ChatMemory chatMemory) {
+    public Config(ChatClient.Builder chatClientBuilder, ChatMemory chatMemory, Tools tools) {
         chatClient = chatClientBuilder
             .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).build())
-            .defaultTools(new Tools())
+            .defaultTools(tools)
             .build();
     }
 
