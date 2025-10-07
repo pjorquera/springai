@@ -9,6 +9,7 @@ import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 class Tools {
 
@@ -32,6 +33,7 @@ public class Config {
     }
 
     @Bean
+    @Profile("!test")
     ApplicationRunner applicationRunner() {
         return _ -> {
             try (Scanner scanner = new Scanner(System.in)) {
