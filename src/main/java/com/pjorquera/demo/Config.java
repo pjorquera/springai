@@ -17,7 +17,6 @@ public class Config {
                     System.out.print("User: ");
                     String input = scanner.nextLine();
                     if ("exit".equalsIgnoreCase(input)) {
-                        System.out.println("Exiting application...");
                         break;
                     }
                 }
