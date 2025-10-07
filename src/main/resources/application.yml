@@ -1,0 +1,6 @@
+spring.main.web-application-type: none
+
+spring.ai.openai:
+  api-key: ignored
+  base-url: http://localhost:12434/engines
+  chat.options.model: ai/gemma3

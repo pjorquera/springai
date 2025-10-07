@@ -24,8 +24,12 @@ repositories {
 	mavenCentral()
 }
 
+bootRun {
+    standardInput = System.in
+}
+
 ext {
-	set('springAiVersion', "1.0.3")
+	set('springAiVersion', '1.0.3')
 }
 
 dependencies {
